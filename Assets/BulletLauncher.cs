@@ -34,11 +34,15 @@ public class BulletLauncher : MonoBehaviour
         if(time>=4.0f)
         {
             float x = Random.Range(-10.0f, 10.0f);
-            float y= Random.Range(0.0f, 1.5f);
+            float y= Random.Range(0.5f, 1.5f);
             float z = Random.Range(-10.0f, 10.0f);
             Instantiate(enemyPrefab, new Vector3(x, y, z),Quaternion.identity);
             time = 0.0f;
         }
 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(collision.gameObject);
     }
 }
