@@ -1,0 +1,3 @@
+        Game design document for shooting Game
+*Introduction: Basic shooting game is where a player has to shoot the enemy.
+
