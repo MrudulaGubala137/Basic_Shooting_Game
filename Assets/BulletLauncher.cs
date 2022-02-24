@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletLauncher : MonoBehaviour
 {
     public GameObject bulletPrefab;
+    public int speed;
     
     // Start is called before the first frame update
     void Start()
@@ -15,9 +16,12 @@ public class BulletLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(bulletPrefab,transform.position,Quaternion.identity);
+            GameObject  tempBullet;
+            tempBullet= Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            tempBullet.GetComponent<Rigidbody>().velocity = Vector3.forward*speed;
         }
 
     }
