@@ -454,4 +454,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 9017197808953383552, guid: da6b129c67cbeb84da21a8ce4ea4809f, type: 3}
-  speed: 10
+  enemyPrefab: {fileID: 5889043388264464062, guid: 6c422f090c4273345b60a37325743366, type: 3}
+  speed: 20
+  time: 0
