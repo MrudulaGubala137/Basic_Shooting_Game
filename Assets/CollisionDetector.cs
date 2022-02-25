@@ -5,23 +5,29 @@ using UnityEngine;
 public class CollisionDetector : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
+    ScoreManager score;
+   public float time;
 
-    }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
+      time=time+Time.deltaTime;
+        if(time>3f)
         {
-        
-            Destroy(collision.gameObject);
-            ScoreUpdate.Score+= 10;
+            Destroy(gameObject);
+            time=0;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+
+            Destroy(collision.gameObject);
+            score = GameObject.Find("ScoreBoard").GetComponent<ScoreManager>();
+            score.ScoreCalculator(10);
+        }
+ 
+    }
+   
 }

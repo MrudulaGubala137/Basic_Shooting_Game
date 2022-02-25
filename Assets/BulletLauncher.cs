@@ -33,9 +33,9 @@ public class BulletLauncher : MonoBehaviour
         time=time+Time.deltaTime;
         if(time>=4.0f)
         {
-            float x = Random.Range(-10.0f, 10.0f);
-            float y= Random.Range(0.5f, 1.5f);
-            float z = Random.Range(-10.0f, 10.0f);
+            float x = Random.Range(Random.Range(-5 ,-15),Random.Range(5,15));
+            float y= Random.Range(0f, 1f);
+            float z = Random.Range(Random.Range(-5, -15), Random.Range(5, 15));
             Instantiate(enemyPrefab, new Vector3(x, y, z),Quaternion.identity);
             time = 0.0f;
         }
