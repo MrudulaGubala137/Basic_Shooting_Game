@@ -19,7 +19,9 @@ public class CollisionDetector : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+        
             Destroy(collision.gameObject);
+            ScoreUpdate.Score+= 10;
         }
     }
 }
